@@ -9,7 +9,8 @@
 // COLORS
 // --------------------------------------------------------
 // Primary
-@light-blue: #3c8dbc;
+//@light-blue: #3c8dbc;
+@light-blue: #001647;
 // Danger
 @red: #dd4b39;
 // Success
@@ -28,46 +29,52 @@
 @purple: #605ca8;
 @maroon: #D81B60;
 @black: #111;
-@gray-lte: #d2d6de;
+@gray-lte: #666666;
+@screen-xs-max: 767px;
 
 // LAYOUT
 // --------------------------------------------------------
 
 // Side bar and logo width
-@sidebar-width: 230px;
+@sidebar-width: 250px;
 // Boxed layout maximum width
 @boxed-layout-max-width: 1024px;
 // When the logo should go to the top of the screen
 @screen-header-collapse: @screen-xs-max;
 
 // Link colors (Aka: <a> tags)
-@link-color: @light-blue;
+@link-color: #666666;//@light-blue;
 @link-hover-color: lighten(@link-color, 15%);
 
 // Body background (Affects main content background only)
-@body-bg: #ecf0f5; // DEPRECATED
-@content-bg: #ecf0f5;
+@body-bg: #ffffff; // DEPRECATED
+@content-bg: #ffffff;
 
 // SIDEBAR SKINS
 // --------------------------------------------------------
 
 // Dark sidebar
-@sidebar-dark-bg: #222d32;
+//@sidebar-dark-bg: #222d32;
+@sidebar-dark-bg: #fff;
 @sidebar-dark-hover-bg: darken(@sidebar-dark-bg, 2%);
-@sidebar-dark-color: lighten(@sidebar-dark-bg, 60%);
-@sidebar-dark-hover-color: #fff;
-@sidebar-dark-submenu-bg: lighten(@sidebar-dark-bg, 5%);
-@sidebar-dark-submenu-color: lighten(@sidebar-dark-submenu-bg, 40%);
-@sidebar-dark-submenu-hover-color: #fff;
+//@sidebar-dark-color: lighten(@sidebar-dark-bg, 60%);
+@sidebar-dark-color: #666666;//lighten(@sidebar-dark-bg, 60%);
+@sidebar-dark-hover-color: #666666;
+@sidebar-dark-submenu-bg: #666666;//#fff;
+//@sidebar-dark-submenu-bg: #DCDCDC;
+//@sidebar-dark-submenu-color: lighten(@sidebar-dark-submenu-bg, 40%);
+@sidebar-dark-submenu-color: #666666;//#DCDCDC;
+@sidebar-dark-submenu-hover-color: #666666;//#DCDCDC;
 
 // Light sidebar
 @sidebar-light-bg: #f9fafc;
-@sidebar-light-hover-bg: lighten(#f0f0f1, 1.5%);
-@sidebar-light-color: #444;
-@sidebar-light-hover-color: #000;
+@sidebar-light-hover-bg: darken(#f0f0f1, 1.5%);//lighten(#f0f0f1, 1.5%);
+//@sidebar-light-color: #444;
+@sidebar-light-color: #666666;
+@sidebar-light-hover-color: #666666;
 @sidebar-light-submenu-bg: @sidebar-light-hover-bg;
 @sidebar-light-submenu-color: #777;
-@sidebar-light-submenu-hover-color: #000;
+@sidebar-light-submenu-hover-color: #666666;
 
 // sidebar-expanded-on-hover
 @sidebar-expanded-shadow: 3px 0 8px rgba(0,0,0,.125);
@@ -99,7 +106,7 @@
 
 // FORMS
 // --------------------------------------------------------
-@input-radius: 0;
+@input-radius: 5px;
 
 // BUTTONS
 // --------------------------------------------------------

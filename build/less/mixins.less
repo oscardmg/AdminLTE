@@ -2,7 +2,7 @@
 //===============
 
 //Changes the color and the hovering properties of the navbar
-.navbar-variant(@color; @font-color: rgba(255, 255, 255, 0.8); @hover-color: #f6f6f6; @hover-bg: rgba(0, 0, 0, 0.1)) {
+.navbar-variant(@color; @font-color: #666666; @hover-color: #f6f6f6; @hover-bg: rgba(0, 0, 0, 0.1)) {
   background-color: @color;
   //Navbar links
   .nav > li > a {
@@ -16,33 +16,33 @@
   .nav .open > a:hover,
   .nav .open > a:focus,
   .nav > .active > a {
-    background: @hover-bg;
-    color: @hover-color;
+    background: darken(#fff,10%);
+    color: @font-color;
   }
 
   //Add color to the sidebar toggle button
   .sidebar-toggle {
     color: @font-color;
     &:hover {
-      color: @hover-color;
-      background: @hover-bg;
+      color: @font-color;
+      background: #fff;
     }
   }
 }
 
 //Logo color variation
 .logo-variant(@bg-color; @color: #fff; @border-bottom-color: transparent; @border-bottom-width: 0) {
-  background-color: @bg-color;
+  background-color: @light-blue; //@bg-color;
   color: @color;
   border-bottom: @border-bottom-width solid @border-bottom-color;
 
   &:hover {
-    background-color: darken(@bg-color, 1%);
+    background-color: lighten(@light-blue, 5%) ;//darken(@bg-color, 1%);
   }
 }
 
 //Box solid color variantion creator
-.box-solid-variant(@color; @text-color: #fff) {
+.box-solid-variant(@color; @text-color: #666666) {
   border: 1px solid @color;
   > .box-header {
     color: @text-color;
@@ -74,12 +74,12 @@
 }
 
 //Different radius each side
-.border-radius(@top-left,  @top-right,  @bottom-left,  @bottom-right)
+.border-radius(@topleft ,  @topright,  @bottomleft,  @bottomright)
 {
-  border-top-left-radius: @top-left;
-  border-top-right-radius: @top-right;
-  border-bottom-right-radius: @bottom-right;
-  border-bottom-left-radius: @bottom-left;
+  border-top-left-radius: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
 }
 
 //Gradient background
@@ -115,15 +115,17 @@
   //User Panel (resides in the sidebar)
   .user-panel {
     > .info, > .info > a {
-      color: #fff;
+      color: #666;
+      font-weight: bold;
     }
   }
   //Sidebar Menu. First level links
   .sidebar-menu > li {
     //Section Headning
     &.header {
-      color: lighten(@sidebar-dark-bg, 20%);
+      color:  darken(@sidebar-dark-color, 20%) ;//lighten(@sidebar-dark-bg, 20%);
       background: darken(@sidebar-dark-bg, 4%);
+      font-weight: bold;
     }
     //links
     > a {
@@ -133,16 +135,16 @@
     &:hover > a,
     &.active > a,
     &.menu-open > a {
-      color: @sidebar-dark-hover-color;
-      background: @sidebar-dark-hover-bg;
+      //color: @sidebar-dark-hover-color;
+      background: darken(@sidebar-dark-bg, 10%);
     }
     &.active > a {
       border-left-color: @link-hover-border-color;
     }
     //First Level Submenu
     > .treeview-menu {
-      margin: 0 1px;
-      background: @sidebar-dark-submenu-bg;
+      margin: 0 4px;
+      background: @sidebar-dark-bg;
     }
   }
   //All links within the sidebar menu
@@ -160,6 +162,7 @@
       }
       &.active > a, > a:hover {
         color: @sidebar-dark-submenu-hover-color;
+        background-color:  darken(@sidebar-dark-bg, 10%);;
       }
     }
   }
@@ -171,26 +174,26 @@
     input[type="text"], .btn {
       box-shadow: none;
       background-color: lighten(@sidebar-dark-bg, 10%);
-      border: 1px solid transparent;
+      border: 1px solid lighten(@sidebar-dark-color,50%);
       height: 35px;
       //.transition(all @transition-speed @transition-fn);
     }
     input[type="text"] {
-      color: #666;
-      .border-radius(2px, 0, 2px, 0);
+      color: @sidebar-dark-color;
+      .border-radius(10px, 0, 10px, 0);
       &:focus,
       &:focus + .input-group-btn .btn {
         background-color: #fff;
-        color: #666;
+        color: @sidebar-dark-color;
       }
       &:focus + .input-group-btn .btn {
-        border-left-color: #fff;
+        border-left-color: #000;
 
       }
     }
     .btn {
-      color: #999;
-      .border-radius(0, 2px, 0, 2px);
+      color: @sidebar-dark-color;
+      .border-radius(0, 10px, 0, 10px);
     }
   }
 }
